@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-11T00:00:00+07:00",
+  "title": "Design System: Ivan Personal Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "deep-navy": { "role": "primary", "displayName": "Deep Navy", "tonalRamp": ["#09111A", "#101B27", "#172536", "#263747", "#536170", "#88939C", "#C4C9CA", "#F4F1EB"] },
+      "navy-secondary": { "role": "secondary", "displayName": "Navy Secondary", "tonalRamp": ["#101A24", "#1A2937", "#263747", "#3C4D5D", "#60707E", "#94A0A7", "#C8CED0", "#F2F1ED"] },
+      "slate-gray": { "role": "neutral", "displayName": "Slate Gray", "tonalRamp": ["#151B21", "#333D47", "#536170", "#66717D", "#86909A", "#A8B0B5", "#CED2D2", "#F4F1EB"] },
+      "slate-ink": { "role": "neutral", "displayName": "Slate Ink", "tonalRamp": ["#111820", "#303B46", "#536170", "#697581", "#8A949B", "#AAB1B6", "#D0D3D4", "#F4F1EB"] },
+      "warm-off-white": { "role": "neutral", "displayName": "Warm Off-White", "tonalRamp": ["#202A32", "#39434A", "#59636D", "#7D858C", "#A5AAAC", "#C8CAC8", "#E5E4E0", "#F4F1EB"] },
+      "paper-white": { "role": "neutral", "displayName": "Paper White", "tonalRamp": ["#202A32", "#39434A", "#59636D", "#7D858C", "#A5AAAC", "#C8CAC8", "#E5E4E0", "#FBFAF7"] },
+      "warm-sand": { "role": "neutral", "displayName": "Warm Sand", "tonalRamp": ["#211C16", "#3E3730", "#675E55", "#8B8379", "#AAA49A", "#C5C0B7", "#D9D5CD", "#E9E6DF"] },
+      "light-gray": { "role": "neutral", "displayName": "Light Gray", "tonalRamp": ["#202A32", "#3D464D", "#606A71", "#858D92", "#A9AFB1", "#C5C9C9", "#D6D8D7", "#E5E4E0"] },
+      "neutral-rule": { "role": "neutral", "displayName": "Neutral Rule", "tonalRamp": ["#202A32", "#3D464D", "#606A71", "#858D92", "#A9AFB1", "#C5C9C9", "#D2D0CA", "#F4F1EB"] },
+      "coffee-accent": { "role": "tertiary", "displayName": "Coffee Accent", "tonalRamp": ["#201309", "#3A2516", "#775534", "#A77B54", "#C7A17D", "#DEC6B1", "#EFE1D3", "#FBF8F3"] },
+      "coffee-ink": { "role": "secondary", "displayName": "Coffee Ink", "tonalRamp": ["#1B120A", "#392616", "#775534", "#927253", "#B0987F", "#C8B9A6", "#E1D7CB", "#F4F1EB"] },
+      "warm-on-navy": { "role": "secondary", "displayName": "Warm on Navy", "tonalRamp": ["#202A32", "#3E4347", "#6B6258", "#98836D", "#B79C7F", "#D2B08D", "#E3CEB2", "#F4F1EB"] },
+      "text-dark": { "role": "neutral", "displayName": "Text Dark", "tonalRamp": ["#101519", "#202A32", "#3E484F", "#626C72", "#8A9295", "#AFB4B3", "#D1D2CE", "#F4F1EB"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Editorial Display", "purpose": "Hero headlines in Newsreader." },
+      "body": { "displayName": "Hospitality Sans", "purpose": "Profile, work history, navigation, and contact details in DM Sans." }
+    },
+    "motion": [
+      { "name": "editorial-enter", "value": "cubic-bezier(.16, 1, .3, 1)", "purpose": "One-time hero entrance and section reveal; disabled by prefers-reduced-motion." },
+      { "name": "interaction", "value": "200ms ease", "purpose": "Quiet link, button, and navigation feedback." }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "680px" },
+      { "name": "tablet", "value": "850px" },
+      { "name": "wide", "value": "1100px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary CTA",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Light editorial button used for the main contact action on navy.",
+      "html": "<a class=\"ds-button\" href=\"#contact\">Hubungi saya</a>",
+      "css": ".ds-button { display:inline-flex; min-height:48px; align-items:center; padding:0 20px; background:var(--paper); color:var(--navy); font:600 13px/1.4 var(--sans); text-decoration:none; transition:background 200ms ease,transform 200ms ease; } .ds-button:hover { background:var(--paper-white); transform:translateY(-2px); } .ds-button:active { transform:translateY(1px); } .ds-button:focus-visible { outline:3px solid var(--coffee); outline-offset:4px; }"
+    },
+    {
+      "name": "Section Navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Sticky, text-led navigation for moving through the profile.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Profile sections\"><a href=\"#about\">Tentang</a><a href=\"#experience\">Pengalaman</a><a href=\"#skills\">Keahlian</a></nav>",
+      "css": ".ds-nav { display:flex; gap:32px; } .ds-nav a { color:var(--navy-soft); font:500 13px/1.5 var(--sans); text-decoration:none; text-underline-offset:5px; } .ds-nav a:hover { color:var(--coffee-ink); text-decoration:underline; } .ds-nav a:focus-visible { outline:3px solid var(--coffee); outline-offset:4px; }"
+    },
+    {
+      "name": "Experience Row",
+      "kind": "custom",
+      "refersTo": "experience-list",
+      "description": "Open ruled row with title, employer, plain description, and supplied duration.",
+      "html": "<article class=\"ds-experience\"><span>01</span><h3>Barista · Angkringan Pusat</h3><p>Pengalaman di bidang pelayanan.</p><strong>10 bulan</strong></article>",
+      "css": ".ds-experience { display:grid; grid-template-columns:32px 1fr auto; gap:12px 20px; align-items:center; padding:22px 0; border-bottom:1px solid var(--rule); color:var(--navy); } .ds-experience span { color:var(--coffee-ink); font:600 12px/1.4 var(--sans); } .ds-experience h3 { margin:0; font:400 24px/1.2 var(--serif); } .ds-experience p { grid-column:2; margin:0; color:var(--ink-soft); font:400 14px/1.6 var(--sans); } .ds-experience strong { grid-column:3; grid-row:1/3; font:400 17px/1.4 var(--serif); }"
+    },
+    {
+      "name": "Contact Link",
+      "kind": "custom",
+      "refersTo": "contact-link",
+      "description": "Direct external contact destination with a clear text action.",
+      "html": "<a class=\"ds-contact\" href=\"mailto:ivanmulyanto58@gmail.com\"><span>Email</span><small>Kirim email</small></a>",
+      "css": ".ds-contact { display:flex; min-height:64px; justify-content:space-between; align-items:center; gap:16px; border-bottom:1px solid var(--rule); color:var(--navy); font:400 22px/1.2 var(--serif); text-decoration:none; } .ds-contact small { color:var(--ink-soft); font:500 12px/1.4 var(--sans); } .ds-contact:hover { color:var(--coffee-ink); } .ds-contact:focus-visible { outline:3px solid var(--coffee); outline-offset:4px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Editorial coffee portfolio",
+    "overview": "A personal hospitality profile shaped like a considered magazine page. Navy carries the professional identity, warm paper makes the story comfortable to read, and coffee photography brings context without claiming to depict Ivan.",
+    "keyCharacteristics": ["Asymmetric editorial hero", "Open work-history list", "Warm off-white and navy", "Coffee imagery is not personal evidence"],
+    "rules": [
+      { "name": "One Accent Rule", "body": "Coffee brown stays a small marker for active details and dividers.", "section": "colors" },
+      { "name": "Evidence Rule", "body": "Every profile claim must come from facts supplied for Ivan.", "section": "components" }
+    ],
+    "dos": ["Use serif display type with DM Sans for reading.", "Keep photography local and list its source and license."],
+    "donts": ["Do not invent dates, certificates, projects, or proficiency levels.", "Do not present stock photographs as Ivan or his workplace.", "Do not add developer-portfolio conventions or skill percentage bars."]
+  }
+}
